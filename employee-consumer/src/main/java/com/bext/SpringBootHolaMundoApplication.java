@@ -11,6 +11,7 @@ import org.springframework.web.client.RestClientException;
 import com.bext.controllers.ConsumerControllerClient;
 
 @SpringBootApplication
+
 public class SpringBootHolaMundoApplication {
 
 	public static void main(String[] args) throws RestClientException, IOException{
