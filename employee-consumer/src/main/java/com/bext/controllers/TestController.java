@@ -4,25 +4,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bext.model.Employee;
-
 @RestController
 public class TestController {
 
-	@RequestMapping(value = "/empleado", method = RequestMethod.GET)
-	public Employee firstPage() {
-
-		Employee emp = new Employee();
-		emp.setName("emp1");
-		emp.setDesignation("manager");
-		emp.setEmpId("1");
-		emp.setSalary(3000);
-
-		return emp;
-	}
-
 	@RequestMapping(value = "/info", method = RequestMethod.GET)
 	public String infoPage() {
-		return "<h3>Página de información employee-producer</h3>";
+		return "<h3>Página de información employee-consumer</h3>";
 	}
 }
