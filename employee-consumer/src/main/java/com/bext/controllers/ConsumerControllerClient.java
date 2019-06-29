@@ -24,7 +24,6 @@ public class ConsumerControllerClient {
 	private LoadBalancerClient loadBalancer;
 	
 	public void getEmployee() throws RestClientException, IOException {
-		
 		//String baseUrl="http://localhost:8080/empleado";
 		//List<ServiceInstance> instances = discoveryClient.getInstances("empleado-productor");
 		ServiceInstance serviceInstance = loadBalancer.choose("empleado-productor");

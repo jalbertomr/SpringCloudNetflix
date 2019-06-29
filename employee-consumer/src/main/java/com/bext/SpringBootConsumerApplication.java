@@ -18,7 +18,7 @@ public class SpringBootConsumerApplication {
 		ApplicationContext ctx = SpringApplication.run( SpringBootConsumerApplication.class, args);
 
 		ConsumerControllerClient consumerControllerClient = ctx.getBean( ConsumerControllerClient.class);
-		System.out.println( "*******************************************" + consumerControllerClient);
+		System.out.println( consumerControllerClient);
 		consumerControllerClient.getEmployee();
 	}
 
