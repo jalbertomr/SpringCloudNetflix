@@ -1,11 +1,9 @@
 package com.bext.controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+
+import com.bext.model.Info;
 
 @Controller
 public class ConsumerControllerClient {
@@ -27,7 +27,9 @@ public class ConsumerControllerClient {
 		//String baseUrl="http://localhost:8080/empleado";
 		//List<ServiceInstance> instances = discoveryClient.getInstances("empleado-productor");
 		ServiceInstance serviceInstance = loadBalancer.choose("empleado-productor");
-		System.out.println( serviceInstance.getUri());
+		System.out.println( "serviceInstance.getUri():" + serviceInstance.getUri());
+		Info.setServiceInstance_Uri( serviceInstance.getUri().toString() );
+		
 		String baseUrl = serviceInstance.getUri().toString();
 		baseUrl = baseUrl + "/empleado";
 		
