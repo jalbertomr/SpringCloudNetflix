@@ -15,6 +15,8 @@ public class TestController {
 	@HystrixCommand(fallbackMethod = "getDataFallBack")
 	public Employee firstPage() {
 
+		System.out.println("Dentro de la primer pagina");
+		
 		Employee emp = new Employee();
 		emp.setName("emp1");
 		emp.setDesignation("manager");
@@ -25,6 +27,9 @@ public class TestController {
 	}
 	
 	public Employee getDataFallBack() {
+		
+		System.out.println("IN fallback");
+		
 		Employee emp = new Employee();
 		emp.setName("fallback-emp1");
 		emp.setDesignation("fallback-manager");
