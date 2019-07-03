@@ -22,7 +22,8 @@ public class SpringBootConsumerApplication {
 		System.out.println( consumerControllerClient);
 		System.out.println( "server.port:" + ctx.getEnvironment().getProperty("server.port"));
 		Info.setPort( ctx.getEnvironment().getProperty("server.port"));
-		consumerControllerClient.getEmployee();
+		for (int i = 0; i < 100; i++)
+		  consumerControllerClient.getEmployee();
 	}
 
 	@Bean
