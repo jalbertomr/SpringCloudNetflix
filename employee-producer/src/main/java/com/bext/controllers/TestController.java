@@ -23,9 +23,9 @@ public class TestController {
 		emp.setEmpId("1");
 		emp.setSalary(3000);
 
-		//Obligamos un error en el flujo de respuesta
-		if (emp.getName().equalsIgnoreCase("emp1")) 
-			throw new RuntimeException();
+		//Obligamos un error en el flujo de respuesta para probar hystrix
+		//if (emp.getName().equalsIgnoreCase("emp1")) 
+		//	throw new RuntimeException();
 		
 		return emp;
 	}
