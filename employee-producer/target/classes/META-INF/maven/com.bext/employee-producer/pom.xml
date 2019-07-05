@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBootHolaMundo</name>
+	<name>SpringBootProducer</name>
 	<description>Esqueleto simple de SpringBoot con productor REST</description>
 
 	<parent>

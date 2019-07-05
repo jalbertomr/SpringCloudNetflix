@@ -12,7 +12,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 public class TestController {
 
 	@RequestMapping(value = "/empleado", method = RequestMethod.GET)
-	@HystrixCommand(fallbackMethod = "getDataFallBack")
+	//@HystrixCommand(fallbackMethod = "getDataFallBack")
 	public Employee firstPage() {
 
 		System.out.println("Dentro de la primer pagina");
